@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>How nodejs Work</title>
+    <link rel="icon" href="./images/favicon.ico" type="image/icon type" />
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section
+          data-background-image="./images/starting.gif"
+          data-transition="concave-in concave-out"
+        >
+          <h3 style="font-size: 32px; color: whitesmoke; margin-top: 420px">
+            Please Wait, Starting Soon...
+          </h3>
+        </section>
+        <section data-background-color="#34495E" data-transition="convex">
+          <div>
+            <img
+              src="./images/nodejs.png"
+              alt="nodejs logo"
+              height="80px"
+              width="120px"
+            />
+            <h4 style="text-transform: none">How Node.js Work</h4>
+            <p style="font-size: 18px">
+              prepared by <a href="#">Jahid Hasan</a>
+            </p>
+            <p></p>
+          </div>
+        </section>
+        <section data-background-color="#1F618D" data-transition="convex">
+          <h4 style="color: green">Basic Of Node.js</h4>
+          <section data-transition="convex">
+            <h5 style="text-transform: none; text-align: left; color: honeydew">
+              What is Node.js
+            </h5>
+            <p style="font-size: 24px; text-align: justify; color: honeydew">
+              Node.js is an open-source, cross-platform, back-end JavaScript
+              runtime environment that runs on the V8 engine and executes
+              JavaScript code outside a web browser
+            </p>
+            <img src="./images/nodeModel.png" alt="nodemodel" />
+          </section>
+          <section data-transition="convex">
+            <h5 style="text-transform: none; text-align: left; color: honeydew">
+              How Node.js Work
+            </h5>
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+              "
+            >
+              <div>
+                <h6
+                  style="font-size: 18px; text-align: justify; color: honeydew"
+                >
+                  let's talk about How Multithreaded work first.
+                </h6>
+              </div>
+              <div>
+                <img
+                  src="./images/multi threaded architecture.png"
+                  alt="nodemodel"
+                  height="350px"
+                  width="100%"
+                />
+                <p style="font-size: 18px; margin-top: 0px; color: floralwhite">
+                  Multi threaded example
+                </p>
+              </div>
+            </div>
+          </section>
+          <section data-transition="convex">
+            <h5 style="text-transform: none; text-align: left; color: honeydew">
+              How Node.js Work
+            </h5>
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+              "
+            >
+              <div>
+                <h6
+                  style="font-size: 18px; text-align: justify; color: honeydew"
+                >
+                  let's talk about How Single Thread Application works.
+                </h6>
+              </div>
+              <div>
+                <img
+                  src="./images/nodejs architeture.png"
+                  alt="nodemodel"
+                  height="95%"
+                  width="100%"
+                />
+                <p style="font-size: 18px; margin-top: 0px; color: floralwhite">
+                  Single threaded example
+                </p>
+              </div>
+            </div>
+          </section>
+        </section>
+        <section
+          data-background-color="#254117"
+          style="color: black"
+          data-transition="convex"
+        >
+          <h4 style="color: white">Memory Management with Node.js</h4>
+          <section data-transition="convex">
+            <h5
+              style="
+                text-align: left;
+                text-transform: none;
+                font-size: 36px;
+                color: wheat;
+              "
+            >
+              Resident Set & Code
+            </h5>
+            <div
+              style="
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+              "
+            >
+              <div
+                style="
+                  text-align: justify;
+                  font-size: 20px;
+                  color: honeydew;
+                  font-size: 28px;
+                  width: 60%;
+                "
+              >
+                <p><strong>Resident Set</strong></p>
+                <p>
+                  A running program is represented through a memory space called
+                  Resident Set.
+                </p>
+
+                <p><strong>Code</strong></p>
+                <p>The actual logic we write called code</p>
+              </div>
+              <div
+                style="
+                  margin-left: 40px;
+                  background-color: deepskyblue;
+                  width: 320px;
+                  height: 450px;
+                  padding: 15px;
+                  font-size: 18px;
+                  font-family: monospace;
+                  border-radius: 5px;
+                  border: 2px solid yellow;
+                "
+              >
+                Resident Set
+                <div
+                  style="
+                    background-color: forestgreen;
+                    padding: 5px;
+                    height: 10%;
+                    border-radius: 5px;
+                    border: 5px solid yellow;
+                  "
+                >
+                  Code Segment
+                </div>
+                <div
+                  style="
+                    margin-top: 2px;
+                    background-color: darkseagreen;
+                    padding: 5px;
+                    height: 20%;
+                    border-radius: 5px;
+                  "
+                >
+                  Stack
+                </div>
+                <div
+                  style="
+                    margin-top: 2px;
+                    background-color: darkorange;
+                    padding: 5px;
+                    height: 58%;
+                    border-radius: 5px;
+                  "
+                >
+                  Heap
+                  <div
+                    style="
+                      margin-top: 5px;
+                      background-color: cornsilk;
+                      height: 80%;
+                      padding-top: 20px;
+                      border-radius: 5px;
+                    "
+                  >
+                    Used Heap
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section data-transition="convex">
+            <h5
+              style="
+                text-align: left;
+                text-transform: none;
+                color: lemonchiffon;
+              "
+            >
+              Stack
+            </h5>
+            <div
+              style="
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+              "
+            >
+              <div
+                style="
+                  text-align: justify;
+                  font-size: 24px;
+                  color: honeydew;
+                  width: 60%;
+                "
+              >
+                <p>
+                  Contains static data like function frames, primitive values
+                  (like boolean / integer), pointers to objects in the heap etc.
+                </p>
+                <pre><code data-line-numbers data-ln-start-from="1">
+					function multiply(a,b) {
+						return a * b;
+					}
+					multiply(a,b);
+					
+					</code></pre>
+                <p>
+                  “Here, both <mark>a</mark> and <mark>b</mark> will be placed
+                  on the stack”
+                </p>
+              </div>
+              <div
+                style="
+                  margin-left: 40px;
+                  background-color: deepskyblue;
+                  width: 320px;
+                  height: 450px;
+                  padding: 15px;
+                  font-size: 18px;
+                  font-family: monospace;
+                  border-radius: 5px;
+                "
+              >
+                Resident Set
+                <div
+                  style="
+                    background-color: forestgreen;
+                    padding: 5px;
+                    height: 10%;
+                    border-radius: 5px;
+                  "
+                >
+                  Code Segment
+                </div>
+                <div
+                  style="
+                    margin-top: 2px;
+                    background-color: darkseagreen;
+                    padding: 5px;
+                    height: 20%;
+                    border-radius: 5px;
+                    border: 5px solid yellow;
+                  "
+                >
+                  Stack
+                </div>
+                <div
+                  style="
+                    margin-top: 2px;
+                    background-color: darkorange;
+                    padding: 5px;
+                    height: 58%;
+                    border-radius: 5px;
+                  "
+                >
+                  Heap
+                  <div
+                    style="
+                      margin-top: 5px;
+                      background-color: cornsilk;
+                      height: 80%;
+                      padding-top: 20px;
+                      border-radius: 5px;
+                    "
+                  >
+                    Used Heap
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section data-transition="convex">
+            <h5
+              style="
+                text-align: left;
+                text-transform: none;
+                color: lemonchiffon;
+              "
+            >
+              Heap
+            </h5>
+            <div
+              style="
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+              "
+            >
+              <div
+                style="
+                  text-align: justify;
+                  font-size: 24px;
+                  color: honeydew;
+                  width: 80%;
+                "
+              >
+                <p>
+                  V8 stores objects or dynamic data in heap. This is the biggest
+                  block of memory area and it's where garbage collection (GC)
+                  takes place.
+                </p>
+                <div
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                  "
+                >
+                  <pre><code data-line-numbers data-ln-start-from="1">
+					function Food(foodItem) {
+						this.name = foodItem.name;
+					}
+					const Burger = new Food({ name: 'Big Mac'});
+
+					</code></pre>
+                  <span style="align-self: center; color: lightseagreen"
+                    ><strong>&#8600;</strong></span
+                  >
+                  <img
+                    style="align-self: center"
+                    src="./images/allocate_3.png"
+                    alt="heap"
+                    height="200px"
+                    width="500px"
+                  />
+                </div>
+              </div>
+              <div
+                style="
+                  margin-left: 40px;
+                  background-color: deepskyblue;
+                  width: 320px;
+                  height: 450px;
+                  padding: 15px;
+                  font-size: 18px;
+                  font-family: monospace;
+                  border-radius: 5px;
+                "
+              >
+                Resident Set
+                <div
+                  style="
+                    background-color: forestgreen;
+                    padding: 5px;
+                    height: 10%;
+                    border-radius: 5px;
+                  "
+                >
+                  Code Segment
+                </div>
+                <div
+                  style="
+                    margin-top: 2px;
+                    background-color: darkseagreen;
+                    padding: 5px;
+                    height: 20%;
+                    border-radius: 5px;
+                  "
+                >
+                  Stack
+                </div>
+                <div
+                  style="
+                    margin-top: 2px;
+                    background-color: darkorange;
+                    padding: 5px;
+                    height: 58%;
+                    border-radius: 5px;
+                    border: 5px solid yellow;
+                  "
+                >
+                  Heap
+                  <div
+                    style="
+                      margin-top: 5px;
+                      background-color: cornsilk;
+                      height: 80%;
+                      padding-top: 20px;
+                      border-radius: 5px;
+                    "
+                  >
+                    Used Heap
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section data-transition="convex">
+            <h5
+              style="
+                text-align: left;
+                text-transform: none;
+                color: lemonchiffon;
+              "
+            >
+              Heap
+            </h5>
+            <div
+              style="
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+              "
+            >
+              <div
+                style="
+                  text-align: justify;
+                  font-size: 24px;
+                  color: honeydew;
+                  width: 80%;
+                "
+              >
+                <p>After this, Heap memory would look something like this</p>
+                <div
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                  "
+                >
+                  <pre><code data-line-numbers data-ln-start-from="1">
+					function Food(foodItem) {
+						this.name = foodItem.name;
+					}
+					const Burger = new Food({ name: 'Big Mac'});
+					const Pizza = new Food({ name: 'Cheesy Pizza'});
+					const Biryani = new Food({ name: 'Prawns Biryani'});
+
+					</code></pre>
+                  <span style="align-self: center; color: lightseagreen"
+                    ><strong>&#8600;</strong></span
+                  >
+                  <img
+                    style="align-self: center"
+                    src="./images/allocate_4.png"
+                    alt="heap"
+                    height="200px"
+                    width="500px"
+                  />
+                </div>
+              </div>
+              <div
+                style="
+                  margin-left: 40px;
+                  background-color: deepskyblue;
+                  width: 320px;
+                  height: 450px;
+                  padding: 15px;
+                  font-size: 18px;
+                  font-family: monospace;
+                  border-radius: 5px;
+                "
+              >
+                Resident Set
+                <div
+                  style="
+                    background-color: forestgreen;
+                    padding: 5px;
+                    height: 10%;
+                    border-radius: 5px;
+                  "
+                >
+                  Code Segment
+                </div>
+                <div
+                  style="
+                    margin-top: 2px;
+                    background-color: darkseagreen;
+                    padding: 5px;
+                    height: 20%;
+                    border-radius: 5px;
+                  "
+                >
+                  Stack
+                </div>
+                <div
+                  style="
+                    margin-top: 2px;
+                    background-color: darkorange;
+                    padding: 5px;
+                    height: 58%;
+                    border-radius: 5px;
+                    border: 5px solid yellow;
+                  "
+                >
+                  Heap
+                  <div
+                    style="
+                      margin-top: 5px;
+                      background-color: cornsilk;
+                      height: 80%;
+                      padding-top: 20px;
+                      border-radius: 5px;
+                    "
+                  >
+                    Used Heap
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section data-transition="convex">
+            <h5
+              style="
+                text-align: left;
+                text-transform: none;
+                color: lemonchiffon;
+              "
+            >
+              Heap
+            </h5>
+            <div
+              style="
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+              "
+            >
+              <div
+                style="
+                  text-align: justify;
+                  font-size: 24px;
+                  color: honeydew;
+                  width: 80%;
+                "
+              >
+                <p>After this, Heap memory would look something like this</p>
+                <div
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                  "
+                >
+                  <pre><code data-line-numbers data-ln-start-from="1">
+					function Food(foodItem) {
+						this.name = foodItem.name;
+					}
+					  
+					const Pizza = new Food({ name: 'Cheesy Pizza'});
+					const Biryani = new Food({ name: 'Prawns Biryani'});
+
+					</code></pre>
+                  <span style="align-self: center; color: lightseagreen"
+                    ><strong>&#8601; &#8600;</strong></span
+                  >
+                  <div
+                    style="
+                      display: flex;
+                      flex-direction: row;
+                      justify-content: space-between;
+                    "
+                  >
+                    <img
+                      style="align-self: center"
+                      src="./images/allocate_5.png"
+                      alt="heap"
+                      height="200px"
+                      width="250px"
+                    />
+                    <img
+                      style="align-self: center"
+                      src="./images/1.gif"
+                      alt="heap"
+                      height="200px"
+                      width="250px"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                style="
+                  margin-left: 40px;
+                  background-color: deepskyblue;
+                  width: 320px;
+                  height: 450px;
+                  padding: 15px;
+                  font-size: 18px;
+                  font-family: monospace;
+                  border-radius: 5px;
+                "
+              >
+                Resident Set
+                <div
+                  style="
+                    background-color: forestgreen;
+                    padding: 5px;
+                    height: 10%;
+                    border-radius: 5px;
+                  "
+                >
+                  Code Segment
+                </div>
+                <div
+                  style="
+                    margin-top: 2px;
+                    background-color: darkseagreen;
+                    padding: 5px;
+                    height: 20%;
+                    border-radius: 5px;
+                  "
+                >
+                  Stack
+                </div>
+                <div
+                  style="
+                    margin-top: 2px;
+                    background-color: darkorange;
+                    padding: 5px;
+                    height: 58%;
+                    border-radius: 5px;
+                    border: 5px solid yellow;
+                  "
+                >
+                  Heap
+                  <div
+                    style="
+                      margin-top: 5px;
+                      background-color: cornsilk;
+                      height: 80%;
+                      padding-top: 20px;
+                      border-radius: 5px;
+                    "
+                  >
+                    Used Heap
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section data-transition="convex">
+            <h4 style="color: #ffff8a; font-size: 32px">
+              Let's Watch Practically In Code
+            </h4>
+            <p style="font-size: 24px; color: #b2d7da">
+              What could be the Problem with memory & The Solution
+            </p>
+          </section>
+        </section>
+        <section data-background-color="#FEFCFF" data-transition="convex">
+          <h4 style="text-transform: none; color: green">
+            ECMAScript 6 vs CJS
+          </h4>
+          <section data-transition="convex">
+            <h5 style="text-align: left">CJS</h5>
+            <p
+              style="
+                font-size: 24px;
+                text-transform: none;
+                text-align: justify;
+                font-family: monospace;
+              "
+            >
+              Node.js's JavaScript code is by defaul
+              <abbr title="Common JavaScript">cjs</abbr> file type
+            </p>
+            <div style="font-size: 24px">
+              <pre>
+				  module.js 
+				  <code data-line-numbers data-ln-start-from="1">
+	  'use strict';
+	  exports.a = 'a';
+	  exports.b = 'b';
+	  exports.c = 'c';
+	  
+				  </code></pre>
+              <pre>
+					  index.js 
+					  <code data-line-numbers data-ln-start-from="1">
+	  const cjsModule = require('./module');
+	  cjsModule.a = 'z';
+	  console.log(cjsModule);
+		  
+					  </code></pre>
+              <pre>
+						  result: 
+						  <code data-trim data-noescape>
+							  {a: 'z', b: 'b', c: 'c'}
+						  </code></pre>
+            </div>
+          </section>
+          <section data-transition="convex">
+            <h5 style="text-align: left; text-transform: none">ECMAScript 6</h5>
+            <p
+              style="
+                font-size: 24px;
+                text-transform: none;
+                text-align: justify;
+                font-family: monospace;
+              "
+            >
+              ECMAScript 2015 is also known as ES6 and ECMAScript 6 was the
+              second major revision to JavaScript.
+            </p>
+            <div style="font-size: 24px">
+              <pre>
+				  module.js 
+				  <code data-line-numbers data-ln-start-from="1">
+		  export let a = 'a';
+		  export let b = 'b';
+		  export let c = 'c';
+	  
+				  </code></pre>
+              <pre>
+					  index.js 
+					  <code data-line-numbers data-ln-start-from="1">
+		  import * as esmModule from './module.js';
+		  esmModule.a = 'z';
+		  console.log(esmModule);
+		  
+					  </code></pre>
+              <pre>
+						  result: 
+						  <code data-trim data-noescape>
+		  esmModule.a = 'z';
+					  ^
+		  TypeError: Cannot assign to read only property 'a' of object '[object Module]'
+						  </code></pre>
+            </div>
+          </section>
+          <section data-transition="convex">
+            <h5 style="text-transform: capitalize">
+              Then How could we use ECMAScript 6 in Node
+            </h5>
+          </section>
+          <section data-auto-animate data-transition="convex">
+            <h5 style="text-transform: capitalize; text-align: left">
+              Here is some Solutions
+            </h5>
+            <p style="text-align: left; font-size: 24px">
+              All ECMAScript 2015 (ES6) features are split into three groups
+            </p>
+            <div
+              style="
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                padding: 10px;
+                color: oldlace;
+              "
+            >
+              <div
+                style="
+                  border: 1px solid royalblue;
+                  border-radius: 5px;
+                  width: 30%;
+                  padding: 15px;
+                  background-color: royalblue;
+                "
+              >
+                <h6 style="font-size: 28px; font-weight: bolder">Shipping</h6>
+                <hr />
+                <p
+                  style="
+                    font-size: 14px;
+                    font-family: monospace;
+                    text-align: justify;
+                  "
+                >
+                  All shipping features, which V8 considers stable, are turned
+                  on by default on Node.js and do NOT require any kind of
+                  runtime flag.
+                </p>
+              </div>
+              <div
+                style="
+                  border: 1px solid royalblue;
+                  border-radius: 5px;
+                  width: 30%;
+                  padding: 15px;
+                  background-color: steelblue;
+                  margin-left: 5px;
+                "
+              >
+                <h6 style="font-size: 28px; font-weight: bolder">Staged</h6>
+                <hr />
+                <p
+                  style="
+                    font-size: 14px;
+                    font-family: monospace;
+                    text-align: justify;
+                  "
+                >
+                  Staged features, which are almost-completed features that are
+                  not considered stable by the V8 team, require a runtime flag:
+                  --harmony
+                </p>
+              </div>
+              <div
+                style="
+                  border: 1px solid royalblue;
+                  border-radius: 5px;
+                  width: 30%;
+                  padding: 15px;
+                  background-color: navy;
+                  margin-left: 5px;
+                "
+              >
+                <h6 style="font-size: 28px; font-weight: bolder">
+                  In progress
+                </h6>
+                <hr />
+                <p
+                  style="
+                    font-size: 14px;
+                    font-family: monospace;
+                    text-align: justify;
+                  "
+                >
+                  In progress features can be activated individually by their
+                  respective harmony flag, although this is highly discouraged
+                  unless for testing purposes. Note: these flags are exposed by
+                  V8 and will potentially change without any deprecation notice.
+                </p>
+              </div>
+            </div>
+          </section>
+          <section data-transition="convex">
+            <h5
+              style="font-size: 18px; text-transform: none; text-align: justify"
+            >
+              Here is the website by which we can see which es6 features is
+              available in nodejs
+            </h5>
+            <iframe
+              style="background-color: blanchedalmond"
+              data-preload
+              data-src="https://node.green/"
+              title="https://node.green/"
+              height="500px"
+              width="100%"
+            ></iframe>
+            <a
+              style="font-size: 18px"
+              href="https://node.green/"
+              target="_blank"
+              >https://node.green</a
+            >
+          </section>
+          <section data-transition="convex">
+            <h5 style="text-transform: none; text-align: justify">
+              Using Transpiler like Babel, esm module, we can also use ES6
+              features.
+            </h5>
+          </section>
+        </section>
+        <section
+          data-state="p"
+          data-background-color="#7F38EC 
+        "
+          data-transition="convex"
+        >
+          <h6>Thank You</h6>
+        </section>
+        <section data-background-color="#36013F" data-transition="convex">
+          <h6>References</h6>
+          <ul style="text-align: left; font-size: 24px; list-style-type: disc">
+            <li>
+              <a href="https://nodejs.org/en/docs/es6/"
+                >https://nodejs.org/en/docs/es6/</a
+              >
+            </li>
+            <li>
+              <a href="https://webreflection.medium.com/cjs-vs-esm-5f8b90a4511a"
+                >https://webreflection.medium.com/cjs-vs-esm-5f8b90a4511a</a
+              >
+            </li>
+            <li>
+              <a href="https://node.green/">https://node.green/</a>
+            </li>
+            <li>
+              <a href="https://kangax.github.io/compat-table/es6/"
+                >https://kangax.github.io/compat-table/es6/</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://dev.to/amoled27/memory-management-with-nodejs-3djn"
+                >https://dev.to/amoled27/memory-management-with-nodejs-3djn</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.freecodecamp.org/news/what-exactly-is-node-js-ae36e97449f5/"
+                >https://www.freecodecamp.org/news/what-exactly-is-node-js-ae36e97449f5/</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.youtube.com/watch?v=jo_B4LTHi3I&ab_channel=InfoQ"
+                >https://www.youtube.com/watch?v=jo_B4LTHi3I&ab_channel=InfoQ</a
+              >
+            </li>
+            <li>
+              <a href="https://www.valentinog.com/blog/node-usage/"
+                >https://www.valentinog.com/blog/node-usage/</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://dev.to/iggredible/what-the-heck-are-cjs-amd-umd-and-esm-ikm"
+                >https://dev.to/iggredible/what-the-heck-are-cjs-amd-umd-and-esm-ikm</a
+              >
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        slideNumber: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+      });
+      Reveal.on("p", function () {
+        console.log('"customevent" has fired');
+        setTimeout(() => {
+          Reveal.next();
+          document.getElementById("credits").className = "wrapper";
+        }, 2000);
+      });
+    </script>
+  </body>
+</html>
